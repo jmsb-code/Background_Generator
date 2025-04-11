@@ -13,3 +13,4 @@ project ("Background_Generator")
 
 # Include sub-projects.
 add_subdirectory ("Background_Generator")
+add_subdirectory ("vendor")
