@@ -11,6 +11,14 @@ endif()
 
 project ("Background_Generator")
 
+if ( UNIX )
+set( CMAKE_CXX_FLAGS_DEBUG_INIT "-fstack-protector" )
+add_definitions("-D_RELATIVE_PATH=\"../\"")
+elseif( WIN32 )
+set( CMAKE_CXX_FLAGS_DEBUG_INIT "/GS" )
+add_definitions("-D_RELATIVE_PATH=\"../../../../\"")
+endif()
+
 # Include sub-projects.
 add_subdirectory ("Background_Generator")
 add_subdirectory ("vendor")
