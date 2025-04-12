@@ -22,7 +22,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-
+	Generate_Texture("example");
 	for (int i = 1; i < argc; i++) {
 		Generate_Texture(argv[i]);
 	}
@@ -184,20 +184,20 @@ void Generate_Texture(const char* filename) {
 	//Add static assets
 	for (json data : backgroundData["Assets"]) {
 		
-		for (json assetData : data) {
-			int x = assetData["X"];
-			int y = assetData["Y"];
-			int w = assetData["Width"];
-			int h = assetData["Height"];
+		
+		int x = data["X"];
+		int y = data["Y"];
+		int w = data["Width"];
+		int h = data["Height"];
 
-			std::string afname = assetData["Filename"];
+		std::string afname = data["Filename"];
 
-			cimg assetTex = cimg((_RELATIVE_PATH + std::string("assets/") + tsfname).c_str());
+		cimg assetTex = cimg((_RELATIVE_PATH + std::string("assets/") + afname).c_str());
 
-			if (w != 0 && h != 0) assetTex.resize(w, h, 1, 4, 3);
+		if (w != 0 && h != 0) assetTex.resize(w, h, 1, 4, 3);
 
-			level.draw_image(x, y, assetTex);
-		}
+		level.draw_image(x, y, assetTex);
+		
 	}
 
 
