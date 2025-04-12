@@ -1,5 +1,4 @@
 Lightweight map texture generator using vendored image libraries (CImg using libpng and by extension zlib, as well as the nlohmann json parsing package, with aesprite 47-tilesets. 
-ZLib may give you compilation errors, install it globally if this is the case and that should fix the program
 
 Input formatting:
     To process a level, create a json file named your_level_name.json in root/levels
@@ -62,5 +61,20 @@ To test the program with the example:
   Copy the example.json file to root/levels and copy 'tileset.png' to levels/tilesets as inputs
   Run the program with 'example' as an argument to generate a copy of 'example.png'.
 
+
+If ZLib gives you compilation errors: 
+
+Zlib Troubleshooting:
+  Navigate to root/vendor and run the following command:
+    ```
+    cmake -S zlib-1.3.1 -B build-zlib -DCMAKE_INSTALL_PREFIX=${PWD}/zlib-install  -DBUILD_SHARED_LIBS=OFF
+    ```
+  Then, run the following:
+    ```
+    cmake --build build-zlib --target install
+    ```
+  
+  If the program still won't compile, install zlib using your package manager and remove set(ZLIB_LIBRARY) and set(ZLIB_INCLUDE_DIR) from vendor/CMakeLists.txt.
+                                                                                      
 Happy map designing!
     -James ~\(^o^)/~

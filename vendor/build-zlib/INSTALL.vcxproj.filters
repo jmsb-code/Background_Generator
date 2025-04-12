@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\build-zlib\CMakeFiles\c7da62cb4c82dd8f80be6fb572cdb324\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{78757055-6D5A-3A31-84AF-CFF384E6668D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

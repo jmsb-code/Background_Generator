@@ -1,0 +1,13 @@
+prefix=C:/Users/pjimm/source/repos/Background_Generator/vendor/${PWD}/zlib-install
+exec_prefix=C:/Users/pjimm/source/repos/Background_Generator/vendor/${PWD}/zlib-install
+libdir=C:/Users/pjimm/source/repos/Background_Generator/vendor/${PWD}/zlib-install/lib
+sharedlibdir=C:/Users/pjimm/source/repos/Background_Generator/vendor/${PWD}/zlib-install/lib
+includedir=C:/Users/pjimm/source/repos/Background_Generator/vendor/${PWD}/zlib-install/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.3.1
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

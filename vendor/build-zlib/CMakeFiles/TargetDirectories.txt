@@ -1,0 +1,8 @@
+C:/Users/pjimm/source/repos/Background_Generator/vendor/build-zlib/CMakeFiles/zlib.dir
+C:/Users/pjimm/source/repos/Background_Generator/vendor/build-zlib/CMakeFiles/zlibstatic.dir
+C:/Users/pjimm/source/repos/Background_Generator/vendor/build-zlib/CMakeFiles/example.dir
+C:/Users/pjimm/source/repos/Background_Generator/vendor/build-zlib/CMakeFiles/minigzip.dir
+C:/Users/pjimm/source/repos/Background_Generator/vendor/build-zlib/CMakeFiles/RUN_TESTS.dir
+C:/Users/pjimm/source/repos/Background_Generator/vendor/build-zlib/CMakeFiles/INSTALL.dir
+C:/Users/pjimm/source/repos/Background_Generator/vendor/build-zlib/CMakeFiles/ALL_BUILD.dir
+C:/Users/pjimm/source/repos/Background_Generator/vendor/build-zlib/CMakeFiles/ZERO_CHECK.dir

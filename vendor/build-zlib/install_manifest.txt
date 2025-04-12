@@ -1,0 +1,7 @@
+C:/Users/pjimm/source/repos/Background_Generator/vendor//zlib-install/lib/zlibd.lib
+C:/Users/pjimm/source/repos/Background_Generator/vendor//zlib-install/bin/zlibd.dll
+C:/Users/pjimm/source/repos/Background_Generator/vendor//zlib-install/lib/zlibstaticd.lib
+C:/Users/pjimm/source/repos/Background_Generator/vendor//zlib-install/include/zconf.h
+C:/Users/pjimm/source/repos/Background_Generator/vendor//zlib-install/include/zlib.h
+C:/Users/pjimm/source/repos/Background_Generator/vendor//zlib-install/share/man/man3/zlib.3
+C:/Users/pjimm/source/repos/Background_Generator/vendor//zlib-install/share/pkgconfig/zlib.pc

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\adler32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\compress.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\crc32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\deflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\gzclose.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\gzlib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\gzread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\gzwrite.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\inflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\infback.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\inftrees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\inffast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\trees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\uncompr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\zutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\build-zlib\zconf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\zlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\crc32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\deflate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\gzguts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\inffast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\inffixed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\inflate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\inftrees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\trees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\zutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\pjimm\source\repos\Background_Generator\vendor\zlib-1.3.1\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{AD0FD02E-81EF-39F4-853F-6394B445196F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6F2CF727-2E5B-3645-BA6B-B17FD0A9CCAF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
