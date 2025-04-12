@@ -160,7 +160,7 @@ Background::Background(const char* filename) {
 	for (int i = 0; i < 7; i++) {
 		for (int j = 0; j < 7; j++) {
 			tileset[i * 7 + j] = cimg((lvlFilename + tsfname).c_str());
-			tileset[i * 7 + j].crop((j * tileSizeSS), (i * tileSizeSS), (j * tileSizeSS)+tileSizeSS, (i * tileSizeSS)+tileSizeSS);
+			tileset[i * 7 + j].crop((j * tileSizeSS), (i * tileSizeSS), (j * tileSizeSS) + tileSizeSS - 1, ((i * tileSizeSS) + tileSizeSS - 1) );
 		}
 	}
 
