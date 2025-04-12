@@ -25,8 +25,10 @@ Input formatting:
                 }
             ]
         }
+
   *The "Tileset" field must be the full name of a png file located in root/levels/tilesets
-   Tilesets should follow the aesprite 47-tileset format. An example tileset 'tileset.png' is provided for you the example directory.
+   Tilesets should follow the aesprite 47-tileset format. 
+   Example tileset 'tileset.png' is provided for you the example directory.
    Credit to Stuart, the original author of this tileset.
 
 
@@ -60,4 +62,4 @@ To test the program with the example:
   Run the program with 'example' as an argument to generate a copy of 'example.png'.
 
 Happy map designing!
--James ~\(^o^)/~
+    -James ~\(^o^)/~
