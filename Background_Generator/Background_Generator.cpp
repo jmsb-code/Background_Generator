@@ -19,6 +19,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
+
 	for (int i = 1; i < argc; i++) {
 		cout << i << ": " << argv[i] << endl;
 		Background bg = Background(argv[i]);
@@ -78,12 +79,12 @@ Background::Background(const char* filename) {
 	  // left + 2*up + 4*right + 8*down + 16*topLeft + 32*topRight + 64*bottomLeft + 128*bottomRight
 
 	//neighbor_score binary (bitwise) representation:
-	  // bottomRight >> bottomLeft >> topRight >> topLeft >> down >> right >> up >> left
+	  // bottomRight >> bottomLeft >> topRight >> topLeft >> down >> right >> up >> left 00010011
 
 	std::map<int, int> neighborInTSIndexOut = {
 		{ 0b10001100, 0 },  { 0b11001101, 1 },  { 0b01001001,  2 }, { 0b00001000, 3 },  { 0b01111111, 4 },  { 0b10111111, 5 },  { 0b11001111, 6 },
 		{ 0b10101110, 7 },  { 0b11111111, 8 },  { 0b01011011, 9 },  { 0b00001010, 10 }, { 0b11011111, 11 }, { 0b11101111, 12 }, { 0b10101111, 13 },
-		{ 0b00100110, 14 }, { 0b00110111, 15 }, { 0b00100011, 16 }, { 0b00000010, 17 }, { 0b01001111, 18 }, { 0b00101111, 19 }, { 0b01011111, 20 },
+		{ 0b00100110, 14 }, { 0b00110111, 15 }, { 0b00010011, 16 }, { 0b00000010, 17 }, { 0b01001111, 18 }, { 0b00101111, 19 }, { 0b01011111, 20 },
 		{ 0b00000100, 21 }, { 0b00000101, 22 }, { 0b00000001, 23 }, { 0b00000000, 24 }, { 0b00011111, 25 }, { 0b10001111, 26 }, { 0b00111111, 27 },
 		{ 0b00101110, 28 }, { 0b00011011, 29 }, { 0b01001101, 30 }, { 0b10001101, 31 }, { 0b00001100, 32 }, { 0b00001101, 33 }, { 0b00001001, 34 },
 		{ 0b10001110, 35 }, { 0b01001011, 36 }, { 0b00010111, 37 }, { 0b00100111, 38 }, { 0b00001110, 39 }, { 0b00001111, 40 }, { 0b00001011, 41 },

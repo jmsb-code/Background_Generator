@@ -23,6 +23,18 @@
       "EndX": 19,
       "StartY": 7,
       "EndY": 8
+    },
+    {
+      "StartX": 18,
+      "EndX": 19,
+      "StartY": 1,
+      "EndY": 15
+    },
+    {
+      "StartX": 17,
+      "EndX": 25,
+      "StartY": 2,
+      "EndY": 6
     }
   ]
 
