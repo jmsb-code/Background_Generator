@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.14)
 
+add_subdirectory(zlib-1.3.1)
+
+set(ZLIB_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/zlib-1.3.1)
 find_package(ZLIB REQUIRED)
 
 # Now libpng will see zlib target because it's already in the project

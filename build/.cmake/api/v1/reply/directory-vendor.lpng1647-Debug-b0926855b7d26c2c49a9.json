@@ -1,0 +1,197 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"vendor/lpng1647/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 965,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 991,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 993,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1012,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1014,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1031,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1038,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1050,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1055,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"vendor/lpng1647/libpng16_staticd.lib"
+			],
+			"targetId" : "png_static::@e010660e482124e0a92c",
+			"targetIndex" : 4,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				"vendor/lpng1647/png.h",
+				"vendor/lpng1647/pngconf.h",
+				"build/vendor/lpng1647/pnglibconf.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "include/libpng16",
+			"paths" : 
+			[
+				"vendor/lpng1647/png.h",
+				"vendor/lpng1647/pngconf.h",
+				"build/vendor/lpng1647/pnglibconf.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "share/man/man3",
+			"paths" : 
+			[
+				"vendor/lpng1647/libpng.3",
+				"vendor/lpng1647/libpngpf.3"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "share/man/man5",
+			"paths" : 
+			[
+				"vendor/lpng1647/png.5"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "lib/libpng",
+			"exportName" : "libpng",
+			"exportTargets" : 
+			[
+				{
+					"id" : "png_static::@e010660e482124e0a92c",
+					"index" : 4
+				}
+			],
+			"paths" : 
+			[
+				"vendor/lpng1647/CMakeFiles/Export/27e805ec6cde31251f2809ac4798f31f/libpng16.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"vendor/lpng1647/libpng16_staticd.lib"
+			],
+			"targetId" : "png_static::@e010660e482124e0a92c",
+			"targetIndex" : 4,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 8,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/PNG",
+			"exportName" : "PNGTargets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "png_static::@e010660e482124e0a92c",
+					"index" : 4
+				}
+			],
+			"paths" : 
+			[
+				"vendor/lpng1647/CMakeFiles/Export/37fe81d72e9d17407a692c28a4a9718c/PNGTargets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 9,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/PNG",
+			"paths" : 
+			[
+				"vendor/lpng1647/scripts/cmake/PNGConfig.cmake",
+				"build/vendor/lpng1647/PNGConfigVersion.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "vendor/lpng1647",
+		"source" : "vendor/lpng1647"
+	}
+}

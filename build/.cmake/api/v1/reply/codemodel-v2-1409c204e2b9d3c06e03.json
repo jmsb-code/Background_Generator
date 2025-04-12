@@ -1,0 +1,228 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "vendor",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-vendor-Debug-fbf6dc3f88f70c22a47e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "vendor"
+				},
+				{
+					"build" : "vendor/zlib-1.3.1",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-vendor.zlib-1.3.1-Debug-cea33f8f265c260c493a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.4.4"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "vendor/zlib-1.3.1",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						5,
+						6
+					]
+				},
+				{
+					"build" : "vendor/lpng1647",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-vendor.lpng1647-Debug-b0926855b7d26c2c49a9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "vendor/lpng1647",
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				},
+				{
+					"build" : "vendor/json-develop",
+					"jsonFile" : "directory-vendor.json-develop-Debug-acd45c583e8a71e3cd45.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "vendor/json-develop"
+				},
+				{
+					"build" : "src",
+					"jsonFile" : "directory-src-Debug-c94b7c2814d5a21df52c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						5
+					],
+					"name" : "Background_Generator",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "zlib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						5,
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "libpng",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 0
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "Background_Generator::@145eef247bfb46b6828c",
+					"jsonFile" : "target-Background_Generator-Debug-9d8b7be7dd58e98abbb8.json",
+					"name" : "Background_Generator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "example::@efd7d6f89751441b32ce",
+					"jsonFile" : "target-example-Debug-2feaf9ad9755870de177.json",
+					"name" : "example",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "minigzip::@efd7d6f89751441b32ce",
+					"jsonFile" : "target-minigzip-Debug-bb36a538aac183e747ce.json",
+					"name" : "minigzip",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "png_genfiles::@e010660e482124e0a92c",
+					"jsonFile" : "target-png_genfiles-Debug-1e330f48776562c0f449.json",
+					"name" : "png_genfiles",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "png_static::@e010660e482124e0a92c",
+					"jsonFile" : "target-png_static-Debug-74767b6497b4268f9903.json",
+					"name" : "png_static",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "zlib::@efd7d6f89751441b32ce",
+					"jsonFile" : "target-zlib-Debug-ad7093990792aa9c1d5a.json",
+					"name" : "zlib",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "zlibstatic::@efd7d6f89751441b32ce",
+					"jsonFile" : "target-zlibstatic-Debug-21b195056f73803e0075.json",
+					"name" : "zlibstatic",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/pjimm/source/repos/Background_Generator/build",
+		"source" : "C:/Users/pjimm/source/repos/Background_Generator"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

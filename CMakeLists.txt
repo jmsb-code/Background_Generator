@@ -9,14 +9,14 @@ endif()
 
 if (UNIX)
     set(CMAKE_CXX_FLAGS_DEBUG_INIT "-fstack-protector")
-    add_definitions("-D_RELATIVE_PATH=\"../\"")
+    add_definitions("-D_RELATIVE_PATH=\"../../levels/\"")
 elseif(WIN32)
     set(CMAKE_CXX_FLAGS_DEBUG_INIT "/GS")
-    add_definitions("-D_RELATIVE_PATH=\"../../../../\"")
+    add_definitions("-D_RELATIVE_PATH=\"../../levels/\"")
 endif()
 
 add_subdirectory(vendor)
-add_subdirectory(Background_Generator)
+add_subdirectory(src)
 
 target_include_directories(Background_Generator PRIVATE ${VENDOR_INCLUDE_DIRS})
 target_link_libraries(Background_Generator PRIVATE vendor_dependencies)

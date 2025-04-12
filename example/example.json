@@ -1,0 +1,27 @@
+{
+  "TileWidth": 30,
+  "TileHeight": 17,
+  "Tileset": "tileset.png",
+  "TileSizeSS": 32,
+  "Tiles": [
+    {
+      "StartX": 0,
+      "EndX": 30,
+      "StartY": 15,
+      "EndY": 17
+    },
+    {
+      "StartX": 15,
+      "EndX": 21,
+      "StartY": 11,
+      "EndY": 12
+    },
+    {
+      "StartX": 17,
+      "EndX": 19,
+      "StartY": 7,
+      "EndY": 8
+    }
+  ]
+
+}
