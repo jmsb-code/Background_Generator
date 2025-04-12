@@ -194,7 +194,7 @@ void Generate_Texture(const char* filename) {
 
 			cimg assetTex = cimg((_RELATIVE_PATH + std::string("assets/") + tsfname).c_str());
 
-			assetTex.resize(w, h, 1, 4, 3);
+			if (w != 0 && h != 0) assetTex.resize(w, h, 1, 4, 3);
 
 			level.draw_image(x, y, assetTex);
 		}
