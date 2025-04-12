@@ -26,7 +26,7 @@ Input formatting:
             ]
         }
   *The "Tileset" field must be the full name of a png file located in root/levels/tilesets
-   Tilesets should follow the aesprite 47-tileset format. An example tileset 'tileset.png' is provided for you the tilesets directory.
+   Tilesets should follow the aesprite 47-tileset format. An example tileset 'tileset.png' is provided for you the example directory.
    Credit to Stuart, the original author of this tileset.
 
 
@@ -53,8 +53,11 @@ How to use:
 
 Example level:
   There is a sample level file in the root/example directory named 'example.json'.
-  The corresponding output png file 'example.png' is provided in the same directory.
-  Copy the example.json file to root/levels and run the program with 'example' as an argument to test the program and generate a copy of this texture.
+  The corresponding output png file 'example.png' is provided in the same directory, along with example 'tileset.png'.
+
+To test the program with the example:
+  Copy the example.json file to root/levels and copy 'tileset.png' to levels/tilesets as inputs
+  Run the program with 'example' as an argument to generate a copy of 'example.png'.
 
 Happy map designing!
 -James ~\(^o^)/~
