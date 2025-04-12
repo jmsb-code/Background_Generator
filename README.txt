@@ -26,10 +26,10 @@ Input formatting:
             ]
         }
 
-  *The "Tileset" field must be the full name of a png file located in root/levels/tilesets
-   Tilesets should follow the aesprite 47-tileset format. 
-   Example tileset 'tileset.png' is provided for you the example directory.
-   Credit to Stuart, the original author of this tileset.
+  *  The "Tileset" field must be the full name of a png file located in root/levels/tilesets
+     Tilesets should follow the aesprite 47-tileset format. 
+     Example tileset 'tileset.png' is provided for you the example directory.
+     Credit to Stuart, the original author of this tileset.
 
 
 How to use:
@@ -48,14 +48,15 @@ How to use:
 
     4. The program will generate a texture for each level name provided as an argument.
 
-    5. A file with the name `<level_name>.png` will be generated into the root/levels/textures directory.
+    5. A file with the name `<level_name>.png` will be generated into the root/levels*/textures directory.
 
-  *If you want to build to another directory, edit the variable _RELATIVE_PATH defined in root/CMakeLists.txt accordingly. 
-   It must define the path from the executable to the input/output directory, named levels by default
+  *  If you want to build to a different directory or use a different directory for input/output, 
+     edit the variable _RELATIVE_PATH defined in root/CMakeLists.txt accordingly.
+     It must define the path from the executable to the input/output directory; 'root/build/src --> root/levels' by default
 
 Example level:
   There is a sample level file in the root/example directory named 'example.json'.
-  The corresponding output png file 'example.png' is provided in the same directory, along with example 'tileset.png'.
+  The corresponding output png file 'example.png' is provided in the same directory, as generated with 'tileset.png'.
 
 To test the program with the example:
   Copy the example.json file to root/levels and copy 'tileset.png' to levels/tilesets as inputs
