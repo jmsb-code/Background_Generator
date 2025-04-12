@@ -32,27 +32,18 @@ int main(int argc, char* argv[])
 
 void Generate_Texture(const char* filename) {
 
-	int tileW;
-	int tileH;
-	int** tiles; //tileset index of each tile
-	std::string tsfname;
-
-
 	std::ifstream lf = std::ifstream(_RELATIVE_PATH + std::string(filename) + ".json");
-	bool fileExists = lf.good();
-	fileExists = fileExists && !lf.eof();
-	fileExists = fileExists && lf.is_open();
 	json backgroundData = json::parse(lf);  //pull data from json file
 
-	tileW = backgroundData["TileWidth"];
-	tileH = backgroundData["TileHeight"];
+	int tileW = backgroundData["TileWidth"];
+	int tileH = backgroundData["TileHeight"];
 
 	int tileSizeSS = backgroundData["TileSizeSS"];
-	tsfname = backgroundData["Tileset"];
+	std::string tsfname = backgroundData["Tileset"];
 
-	//create array of empty tiles
-	tiles = new int* [tileW];
-	bool** tileData = new bool* [tileW];
+	//create empty arrays
+	int** tiles = new int* [tileW]; //to be filled with tileset index of each tile
+	bool** tileData = new bool* [tileW]; //tileData[i][j] = true if tile is filled, false if empty
 	for (int i = 0; i < tileW; i++) {
 		tiles[i] = new int[tileH];
 		tileData[i] = new bool[tileH];
@@ -170,43 +161,50 @@ void Generate_Texture(const char* filename) {
 	}
 
 
-	//create transparent png output image
+	//create transparent png output image of appropriate size
 	cimg level = cimg(tileW * tileSizeSS, tileH * tileSizeSS, 1, 4, 0);
 
-	for (int i = 0; i < tileW; i++) {
-		for (int j = 0; j < tileH; j++) {
-			//draw each tile to image, don't bother drawing transparent tiles to prevent artifacts, save time
-			if(tileData[i][j]) level.draw_image(i*tileSizeSS, j*tileSizeSS, tileset[tiles[i][j]]);
-		}
-	}
-
-
-	//Add static assets
+	//Draw bottom static assets
 	for (json data : backgroundData["Assets"]) {
-		
-		
-		int x = data["X"];
-		int y = data["Y"];
-		int w = data["Width"];
-		int h = data["Height"];
+
+		if (!data.contains("BelowTiles") || !data["BelowTiles"]) continue;
 
 		std::string afname = data["Filename"];
 
 		cimg assetTex = cimg((_RELATIVE_PATH + std::string("assets/") + afname).c_str());
 
-		if (w != 0 && h != 0) assetTex.resize(w, h, 1, 4, 3);
+		//resize texture if new dimensions are given
+		if (data.contains("Width") && data.contains("Height")) assetTex.resize(data["Width"], data["Height"], 1, 4, 3);
 
-		level.draw_image(x, y, assetTex);
-		
+		level.draw_image(data["X"], data["Y"], assetTex);
+
 	}
 
+	//draw each tile to image, don't bother drawing transparent tiles to prevent artifacts + save time
+	for (int i = 0; i < tileW; i++) {
+		for (int j = 0; j < tileH; j++) {
+			if(tileData[i][j]) level.draw_image(i*tileSizeSS, j*tileSizeSS, tileset[tiles[i][j]]);
+		}
+	}
+
+	//Draw top static assets
+	for (json data : backgroundData["Assets"]) {
+
+		if (data.contains("BelowTiles") && data["BelowTiles"]) continue;
+
+		std::string afname = data["Filename"];
+
+		cimg assetTex = cimg((_RELATIVE_PATH + std::string("assets/") + afname).c_str());
+
+		//resize texture if new dimensions are given
+		if (data.contains("Width") && data.contains("Height")) assetTex.resize(data["Width"], data["Height"], 1, 4, 3);
+
+		level.draw_image(data["X"], data["Y"], assetTex);
+
+	}
 
 	//save image to file
 	level.save_png((_RELATIVE_PATH + std::string("textures/") + std::string(filename) + std::string(".png")).c_str());
 
-	//free memory from bool arrays
-	for (int i = 0; i < tileW; i++) {
-		delete[] tileData[i];
-	}
-	delete[] tileData;
+	return;
 }

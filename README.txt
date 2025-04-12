@@ -5,16 +5,33 @@ Input formatting:
 
     The json file must share the name of its directory in root/levels and should follow the following structure:	
         {
-            "TileWidth": $, = number of tiles in the x direction
-            "TileHeight": $, = number of tiles in the y direction
-            "Tileset": "$$$.png", = name of the tileset png file*
-            "TileSizeSS": $, = size of each tile as on tileset, in pixels
+            "TileWidth": $, <- number of tiles in the x direction
+            "TileHeight": $, <- number of tiles in the y direction
+            "Tileset": "$$$.png", <- name of tileset png file located in levels/tilesets*
+            "TileSizeSS": $, <- size of each tile as on tileset, in pixels
             "Tiles": [
                 {
                     "StartX": $ (inclusive),
                     "EndX": $ (inclusive),
                     "StartY": $ (exclusive),
                     "EndY": $ (exclusive)
+                },
+                {
+                    .
+                    .
+                    .
+                    .
+                }
+            ],
+            "Assets": [
+                {
+                    "X": $, <- x position in pixels of topleft corner of asset render position
+                    "Y": $, <- y position in pixels of topleft corner of asset render position
+                    "Width": $, <- optional, width to resize to
+                    "Height": $, <- optional, height to resize to
+                    "Filename": "$$$.png", <- name of asset png file located in levels/assets
+                    "BelowTiles": true/false <- optional, default is false
+
                 },
                 {
                     .
@@ -39,6 +56,8 @@ How to use:
        cmake ..
        ```  
 
+    2.1. If you experience build issues see note on Zlib at the end of this file.
+
     3. navigate to the build/src directory and run the program:
        ```
        cd src
@@ -54,17 +73,15 @@ How to use:
      It must define the path from the executable to the input/output directory; 'root/build/src --> root/levels' by default
 
 Example level:
-  There is a sample level file in the root/example directory named 'example.json'.
-  The corresponding output png file 'example.png' is provided in the same directory, as generated with 'tileset.png'.
+  There is a sample level file with necessary files provided for you in the appropriate directories
+  Copies of the 3 input files plus the output png are availible in root/example
 
 To test the program with the example:
-  Copy the example.json file to root/levels and copy 'tileset.png' to levels/tilesets as inputs
-  Run the program with 'example' as an argument to generate a copy of 'example.png'.
+  Make sure example.json is in root/levels, 'tileset.png' is in levels/tilesets, and 'assets.png' is in levels/assets
+  Run the program with 'example' as an argument to generate a copy of 'example.png' into levels/textures.
 
 
-If ZLib gives you compilation errors: 
-
-Zlib Troubleshooting:
+If ZLib gives you compilation errors:
   Navigate to root/vendor and run the following command:
     ```
     cmake -S zlib-1.3.1 -B build-zlib -DCMAKE_INSTALL_PREFIX=${PWD}/zlib-install  -DBUILD_SHARED_LIBS=OFF
@@ -74,7 +91,7 @@ Zlib Troubleshooting:
     cmake --build build-zlib --target install
     ```
   
-  If the program still won't compile, install zlib using your package manager and remove set(ZLIB_LIBRARY) and set(ZLIB_INCLUDE_DIR) from vendor/CMakeLists.txt.
+  If the program still won't compile, install zlib using your package manager and remove set(ZLIB_LIBRARY) and set(ZLIB_INCLUDE_DIR) from vendor/CMakeLists.txt
                                                                                       
-Happy map designing!
+Good luck and happy map designing!
     -James ~\(^o^)/~

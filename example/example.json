@@ -25,11 +25,12 @@
   ],
   "Assets": [
     {
-      "X": 0,
-      "Y": 0,
-      "Width": 0,
-      "Height": 0,
-      "Filename": "asset.png"
+      "X": 48,
+      "Y": 388,
+      "Width": 64,
+      "Height": 96,
+      "Filename": "asset.png",
+      "BelowTiles":  true
       
     }
   ]
