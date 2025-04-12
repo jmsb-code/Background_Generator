@@ -3,7 +3,7 @@ Lightweight map texture generator using vendored image libraries (CImg using lib
 Input formatting:
     To process a level, create a json file named your_level_name.json in root/levels
 
-    The json file must share the name of its directory in root/levels and should follow the following structure:	
+    The json file must share the name of its directory in root/levels and should fill the following fields:	
         {
             "TileWidth": $, <- number of tiles in the x direction
             "TileHeight": $, <- number of tiles in the y direction
