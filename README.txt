@@ -1,4 +1,4 @@
-Lightweight map texture generator using vendored image libraries and aesprite 47-tilesets. 
+Lightweight map texture generator using vendored image libraries (CImg using libpng and by extension zlib, as well as the nlohmann json parsing package, with aesprite 47-tilesets. 
 ZLib may give you compilation errors, install it globally if this is the case and that should fix the program
 
 Input formatting:
