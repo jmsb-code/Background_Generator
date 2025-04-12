@@ -9,11 +9,11 @@ endif()
 
 if (UNIX)
     set(CMAKE_CXX_FLAGS_DEBUG_INIT "-fstack-protector")
-    add_definitions("-D_RELATIVE_PATH=\"../../levels/\"")
 elseif(WIN32)
     set(CMAKE_CXX_FLAGS_DEBUG_INIT "/GS")
-    add_definitions("-D_RELATIVE_PATH=\"../../levels/\"")
 endif()
+
+add_definitions("-D_RELATIVE_PATH=\"../../levels/\"")
 
 add_subdirectory(vendor)
 add_subdirectory(src)
