@@ -1,14 +1,11 @@
-﻿# CMakeList.txt : CMake project for Background_Generator, include source and define
-# project specific logic here.
-#
+﻿add_executable(Background_Generator
+    Background_Generator.cpp
+    Background_Generator.h
+)
 
-# Add source to this project's executable.
-add_executable (Background_Generator "Background_Generator.cpp" "Background_Generator.h")
+target_include_directories(Background_Generator PRIVATE
+    ${CMAKE_SOURCE_DIR}/vendor/zlib-1.3.1
+    ${CMAKE_BINARY_DIR}/vendor/zlib-1.3.1
+)
 
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET Background_Generator PROPERTY CXX_STANDARD 20)
-endif()
-
-target_link_libraries(${PROJECT_NAME} PRIVATE vendor)
-
-# TODO: Add tests and install targets if needed.
+set_property(TARGET Background_Generator PROPERTY CXX_STANDARD 20)
