@@ -17,18 +17,20 @@ using json = nlohmann::json;
 
 using namespace std;
 
-int main()
+int main(int argc, char* argv[])
 {
-
-	Background bg = Background("test");
-	cout << bg.tiles[5][12] << endl;
+	for (int i = 1; i < argc; i++) {
+		cout << i << ": " << argv[i] << endl;
+		Background bg = Background(argv[i]);
+	}
+	
 	return 0;
 }
 
 Background::Background(const char* filename) {
-	std::string lvlFilename = _RELATIVE_PATH + std::string("levels/") + std::string(filename) + std::string("/") + std::string(filename) + ".json";
+	std::string lvlFilename = _RELATIVE_PATH + std::string("levels/") + std::string(filename) + std::string("/");
 
-	std::ifstream lf = std::ifstream(lvlFilename);
+	std::ifstream lf = std::ifstream(lvlFilename + std::string(filename) + ".json");
 	bool fileExists = lf.good();
 	fileExists = fileExists && !lf.eof();
 	fileExists = fileExists && lf.is_open();
@@ -150,6 +152,27 @@ Background::Background(const char* filename) {
 			tiles[i][j] = neighborInTSIndexOut[neighbor_score];
 		}
 	}
+
+	//load tileset
+	cimg* tileset = new cimg[49];
+
+	for (int i = 0; i < 7; i++) {
+		for (int j = 0; j < 7; j++) {
+			tileset[i * 7 + j] = cimg((lvlFilename + tsfname).c_str());
+			tileset[i * 7 + j].crop((j * tileSizeSS), (i * tileSizeSS), (j * tileSizeSS)+tileSizeSS, (i * tileSizeSS)+tileSizeSS);
+		}
+	}
+
+	cimg level = cimg(tileW * tileSizeSS, tileH * tileSizeSS, 1, 4, 0);
+
+	for (int i = 0; i < tileW; i++) {
+		for (int j = 0; j < tileH; j++) {
+			
+			if(tileData[i][j]) level.draw_image(i*tileSizeSS, j*tileSizeSS, tileset[tiles[i][j]]);
+		}
+	}
+
+	level.save_png((lvlFilename + std::string(filename) + std::string(".png")).c_str());
 
 	for (json data : backgroundData["Assets"]) {
 	}
