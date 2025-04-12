@@ -7,6 +7,7 @@ build
 
 levels/textures/*.png
 levels/tilesets/*.png
+levels/assets/*.png
 levels/*.json
 
 # User-specific files

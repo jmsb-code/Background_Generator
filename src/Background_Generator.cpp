@@ -180,12 +180,29 @@ void Generate_Texture(const char* filename) {
 		}
 	}
 
+
+	//Add static assets
+	for (json data : backgroundData["Assets"]) {
+		
+		for (json assetData : data) {
+			int x = assetData["X"];
+			int y = assetData["Y"];
+			int w = assetData["Width"];
+			int h = assetData["Height"];
+
+			std::string afname = assetData["Filename"];
+
+			cimg assetTex = cimg((_RELATIVE_PATH + std::string("assets/") + tsfname).c_str());
+
+			assetTex.resize(w, h, 1, 4, 3);
+
+			level.draw_image(x, y, assetTex);
+		}
+	}
+
+
 	//save image to file
 	level.save_png((_RELATIVE_PATH + std::string("textures/") + std::string(filename) + std::string(".png")).c_str());
-
-	//TODO: add static assetsg
-	for (json data : backgroundData["Assets"]) {
-	}
 
 	//free memory from bool arrays
 	for (int i = 0; i < tileW; i++) {

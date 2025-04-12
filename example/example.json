@@ -22,6 +22,16 @@
       "StartY": 7,
       "EndY": 8
     }
+  ],
+  "Assets": [
+    {
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Filename": "asset.png",
+      
+    }
   ]
 
 }
