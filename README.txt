@@ -1,4 +1,5 @@
-Lightweight map texture generator using vendored image libraries (CImg using libpng and by extension zlib, as well as the nlohmann json parsing package, with aesprite 47-tilesets. 
+Lightweight map texture generator using vendored image libraries (CImg using libpng and by extension zlib, as well as the nlohmann json parsing package).
+Program takes json as input and bakes together tiles from an aesprite 47-tileset with other static images to create in-game level backdrops. 
 
 Input formatting:
     To process a level, create a json file named your_level_name.json in root/levels
