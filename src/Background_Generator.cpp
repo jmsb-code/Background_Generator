@@ -22,7 +22,6 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	Generate_Texture("example");
 	for (int i = 1; i < argc; i++) {
 		Generate_Texture(argv[i]);
 	}
