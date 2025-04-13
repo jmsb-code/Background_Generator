@@ -163,6 +163,69 @@ void Generate_Texture(const char* filename) {
 	//create transparent png output image of appropriate size
 	cimg level = cimg(tileW * tileSizeSS, tileH * tileSizeSS, 1, 4, 0);
 
+
+	//draw backdrop
+	if (backgroundData.contains("Backdrop")) {
+		if (backgroundData["Backdrop"].contains("Color")) {
+			level = cimg(tileW * tileSizeSS, tileH * tileSizeSS, 1, 4, backgroundData["Backdrop"]["Color"]);
+		}
+		if (backgroundData["Backdrop"].contains("Filename")) {
+
+			//load backdrop textures
+			std::string bdfname = backgroundData["Backdrop"]["Filename"];
+			cimg backdrop = cimg((_RELATIVE_PATH + std::string("assets/") + bdfname).c_str());
+
+			//resize texture and tile accordingly if backdrop is tiled
+			if (backgroundData["Backdrop"].contains("Tiled") && backgroundData["Backdrop"]["Tiled"]) y{
+				int w = backgroundData["Backdrop"]["Width"];
+				int h = backgroundData["Backdrop"]["Height"];
+
+				backdrop.resize(backgroundData["Backdrop"]["Width"], backgroundData["Backdrop"]["Height"], 1, 4, 3);
+				
+				int x = 0;
+				int y = 0;
+				for (int i = 0; x < tileW / w; x++) {
+					for (int j = 0; y < tileH / h; y++) {
+						level.draw_image(x * w, y * h, backdrop);
+					}
+				}
+
+				int spareX = (tileSizeSS * tileW) - ((x - 1) * (w));
+				int spareY = (tileSizeSS * tileH) - ((y - 1) * (h));
+
+				if (spareX > 1) {
+					cimg backdrop_trim = cimg(backdrop);
+					for (int j = 0; j < y; j++) {
+						backdrop_trim.crop(0, 0, spareX - 1,  h);
+						level.draw_image(x * w, j * h, backdrop_trim);
+					}
+					if (spareY > 1) {
+						backdrop_trim.crop(0, 0, spareX - 1, spareY - 1);
+						
+						level.draw_image(x * w, y * h, backdrop_trim);
+						
+					}
+				}
+
+				if (spareY > 1) {
+					cimg backdrop_trim = cimg(backdrop);
+					for (int i = 0; i < x; i++) {
+						backdrop_trim.crop(0, 0, w, spareY - 1);
+						level.draw_image(i * w, y * h, backdrop_trim);
+					}
+					if (spareX > 1) {
+						backdrop_trim.crop(0, 0, spareX - 1, spareY - 1);
+						level.draw_image(x * w, y * h, backdrop_trim);
+					}
+				}
+			}
+			else {
+				backdrop.resize(tileW*tileSizeSS, tileH*tileSizeSS, 1, 4, 3);
+				level.draw_image(0, 0, backdrop);
+			}
+		}
+	}
+
 	//Draw bottom static assets
 	for (json data : backgroundData["Assets"]) {
 
