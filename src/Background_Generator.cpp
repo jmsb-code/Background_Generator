@@ -22,11 +22,24 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
+	Generate_Texture("example");
 	for (int i = 1; i < argc; i++) {
 		Generate_Texture(argv[i]);
 	}
 	
 	return 0;
+}
+
+//draw source onto target at (x, y), only altering pixels that are non-transparent in source
+void draw_nontransparent(cimg* target, int x, int y, cimg* source) {
+	cimg_forXY(*source, x1, y1) {
+		if ((*source)(x1, y1, 0, 3) > 5) {
+			(*target)(x + x1, y + y1, 0, 0) = (*source)(x1, y1, 0, 0);
+			(*target)(x + x1, y + y1, 0, 1) = (*source)(x1, y1, 0, 1);
+			(*target)(x + x1, y + y1, 0, 2) = (*source)(x1, y1, 0, 2);
+			//target(x + x1, y + y1, 0, 3) = source(x1, y1, 0, 3);
+		}
+	}
 }
 
 void Generate_Texture(const char* filename) {
@@ -198,7 +211,7 @@ void Generate_Texture(const char* filename) {
 
 				for (int i = 0; i < bgW; i++) {
 					for (int j = 0; j < bgH; j++) {
-						level.draw_image(i * w, j * h, backdrop);
+						draw_nontransparent(&level, i * w, j * h, &backdrop);
 					}
 				}
 
@@ -209,12 +222,12 @@ void Generate_Texture(const char* filename) {
 					cimg backdrop_trim = cimg(backdrop);
 					for (int j = 0; j < bgH; j++) {
 						backdrop_trim.crop(0, 0, spareX - 1,  h);
-						level.draw_image(bgW* w, j * h, backdrop_trim);
+						draw_nontransparent(&level, bgW* w, j * h, &backdrop_trim);
 					}
 					if (spareY > 1) {
 						backdrop_trim.crop(0, 0, spareX - 1, spareY - 1);
 						
-						level.draw_image(bgW* w, bgH* h, backdrop_trim);
+						draw_nontransparent(&level, bgW* w, bgH* h, &backdrop_trim);
 						
 					}
 				}
@@ -223,20 +236,21 @@ void Generate_Texture(const char* filename) {
 					cimg backdrop_trim = cimg(backdrop);
 					for (int i = 0; i < bgW; i++) {
 						backdrop_trim.crop(0, 0, w, spareY - 1);
-						level.draw_image(i * w, bgH* h, backdrop_trim);
+						draw_nontransparent(&level, i * w, bgH* h, &backdrop_trim);
 					}
 					if (spareX > 1) {
 						backdrop_trim.crop(0, 0, spareX - 1, spareY - 1);
-						level.draw_image(bgW* w, bgH* h, backdrop_trim);
+						draw_nontransparent(&level, bgW* w, bgH* h, &backdrop_trim);
 					}
 				}
 			}
 			else {
 				backdrop.resize(tileW*tileSizeSS, tileH*tileSizeSS, 1, 4, 3);
-				level.draw_image(0, 0, backdrop);
+				draw_nontransparent(&level, 0, 0, &backdrop);
 			}
 		}
 	}
+	level.save_png((_RELATIVE_PATH + std::string("textures/") + std::string(filename) + "_bdONLY" + std::string(".png")).c_str());
 
 	//Draw bottom static assets
 	for (json data : backgroundData["Assets"]) {
@@ -250,14 +264,14 @@ void Generate_Texture(const char* filename) {
 		//resize texture if new dimensions are given
 		if (data.contains("Width") && data.contains("Height")) assetTex.resize(data["Width"], data["Height"], 1, 4, 3);
 
-		level.draw_image(data["X"], data["Y"], assetTex);
+		draw_nontransparent(&level, data["X"], data["Y"], &assetTex);
 
 	}
 
 	//draw each tile to image, don't bother drawing transparent tiles to prevent artifacts + save time
 	for (int i = 0; i < tileW; i++) {
 		for (int j = 0; j < tileH; j++) {
-			if(tileData[i][j]) level.draw_image(i*tileSizeSS, j*tileSizeSS, tileset[tiles[i][j]]);
+			if(tileData[i][j]) draw_nontransparent(&level, i*tileSizeSS, j*tileSizeSS, &tileset[tiles[i][j]]);
 		}
 	}
 
@@ -273,7 +287,7 @@ void Generate_Texture(const char* filename) {
 		//resize texture if new dimensions are given
 		if (data.contains("Width") && data.contains("Height")) assetTex.resize(data["Width"], data["Height"], 1, 4, 3);
 
-		level.draw_image(data["X"], data["Y"], assetTex);
+		draw_nontransparent(&level, data["X"], data["Y"], &assetTex);
 
 	}
 
