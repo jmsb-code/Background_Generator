@@ -215,16 +215,16 @@ void Generate_Texture(const char* filename) {
 					}
 				}
 
-				int spareX = (tileSizeSS * tileW) - ((bgW - 1) * (w));
-				int spareY = (tileSizeSS * tileH) - ((bgH - 1) * (h));
+				int spareX = (tileSizeSS * tileW) - ((bgW) * (w));
+				int spareY = (tileSizeSS * tileH) - ((bgH) * (h));
 
-				if (spareX > 1) {
+				if (spareX > 2) {
 					cimg backdrop_trim = cimg(backdrop);
 					for (int j = 0; j < bgH; j++) {
 						backdrop_trim.crop(0, 0, spareX - 1,  h);
 						draw_nontransparent(&level, bgW* w, j * h, &backdrop_trim);
 					}
-					if (spareY > 1) {
+					if (spareY > 2) {
 						backdrop_trim.crop(0, 0, spareX - 1, spareY - 1);
 						
 						draw_nontransparent(&level, bgW* w, bgH* h, &backdrop_trim);
@@ -232,13 +232,13 @@ void Generate_Texture(const char* filename) {
 					}
 				}
 
-				if (spareY > 1) {
+				if (spareY > 2) {
 					cimg backdrop_trim = cimg(backdrop);
 					for (int i = 0; i < bgW; i++) {
 						backdrop_trim.crop(0, 0, w, spareY - 1);
 						draw_nontransparent(&level, i * w, bgH* h, &backdrop_trim);
 					}
-					if (spareX > 1) {
+					if (spareX > 2) {
 						backdrop_trim.crop(0, 0, spareX - 1, spareY - 1);
 						draw_nontransparent(&level, bgW* w, bgH* h, &backdrop_trim);
 					}
@@ -250,7 +250,7 @@ void Generate_Texture(const char* filename) {
 			}
 		}
 	}
-	level.save_png((_RELATIVE_PATH + std::string("textures/") + std::string(filename) + "_bdONLY" + std::string(".png")).c_str());
+	//level.save_png((_RELATIVE_PATH + std::string("textures/") + std::string(filename) + "_bdONLY" + std::string(".png")).c_str());
 
 	//Draw bottom static assets
 	for (json data : backgroundData["Assets"]) {
