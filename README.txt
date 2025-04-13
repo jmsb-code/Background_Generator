@@ -74,12 +74,12 @@ How to use:
      It must define the path from the executable to the input/output directory; 'root/build/src --> root/levels' by default
 
 Example level:
-  There is a sample level file with necessary files provided for you in the appropriate directories
-  Copies of the 3 input files plus the output png are availible in root/example
+  There is a sample level called 'example' with necessary files provided for you in the appropriate directories
+  A copy of the example level directory is provided in root/example
 
 To test the program with the example:
-  Make sure example.json is in root/levels, 'tileset.png' is in levels/tilesets, and 'assets.png' is in levels/assets
-  Run the program with 'example' as an argument to generate a copy of 'example.png' into levels/textures.
+  Make sure example.json is in root/levels, 'tileset.png' is in levels/tilesets, and 'clouds.png' and 'asset.png' are in levels/assets
+  Run the program with 'example' as an argument to rewrite 'example.png' into levels/textures.
 
 
 If ZLib gives you compilation errors:
