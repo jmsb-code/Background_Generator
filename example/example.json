@@ -3,6 +3,18 @@
   "TileHeight": 17,
   "Tileset": "tileset.png",
   "TileSizeSS": 32,
+  "Backdrop": {
+    "Color": {
+      "R": 255,
+      "G": 255,
+      "B": 255,
+      "A": 255
+    },
+    "Filename": "clouds.png",
+    "Tiled": true,
+    "Width": 74,
+    "Height": 48
+  },
   "Tiles": [
     {
       "StartX": 0,

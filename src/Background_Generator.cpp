@@ -167,7 +167,18 @@ void Generate_Texture(const char* filename) {
 	//draw backdrop
 	if (backgroundData.contains("Backdrop")) {
 		if (backgroundData["Backdrop"].contains("Color")) {
-			level = cimg(tileW * tileSizeSS, tileH * tileSizeSS, 1, 4, backgroundData["Backdrop"]["Color"]);
+			level = cimg(tileW * tileSizeSS, tileH * tileSizeSS, 1, 4, 0);
+
+			unsigned char a = 255;
+
+			if (backgroundData["Backdrop"]["Color"].contains("A")) a = backgroundData["Backdrop"]["Color"]["A"];
+
+			cimg_forXY(level, x, y) {
+				level(x, y, 0, 0) = backgroundData["Backdrop"]["Color"]["R"];
+				level(x, y, 0, 1) = backgroundData["Backdrop"]["Color"]["G"];
+				level(x, y, 0, 2) = backgroundData["Backdrop"]["Color"]["B"];
+				level(x, y, 0, 3) = a;
+			}
 		}
 		if (backgroundData["Backdrop"].contains("Filename")) {
 
@@ -182,40 +193,41 @@ void Generate_Texture(const char* filename) {
 
 				backdrop.resize(backgroundData["Backdrop"]["Width"], backgroundData["Backdrop"]["Height"], 1, 4, 3);
 				
-				int x = 0;
-				int y = 0;
-				for (int i = 0; x < tileW / w; x++) {
-					for (int j = 0; y < tileH / h; y++) {
-						level.draw_image(x * w, y * h, backdrop);
+				int bgW = (tileW * tileSizeSS) / w;
+				int bgH = (tileH * tileSizeSS) / h;
+
+				for (int i = 0; i < bgW; i++) {
+					for (int j = 0; j < bgH; j++) {
+						level.draw_image(i * w, j * h, backdrop);
 					}
 				}
 
-				int spareX = (tileSizeSS * tileW) - ((x - 1) * (w));
-				int spareY = (tileSizeSS * tileH) - ((y - 1) * (h));
+				int spareX = (tileSizeSS * tileW) - ((bgW - 1) * (w));
+				int spareY = (tileSizeSS * tileH) - ((bgH - 1) * (h));
 
 				if (spareX > 1) {
 					cimg backdrop_trim = cimg(backdrop);
-					for (int j = 0; j < y; j++) {
+					for (int j = 0; j < bgH; j++) {
 						backdrop_trim.crop(0, 0, spareX - 1,  h);
-						level.draw_image(x * w, j * h, backdrop_trim);
+						level.draw_image(bgW* w, j * h, backdrop_trim);
 					}
 					if (spareY > 1) {
 						backdrop_trim.crop(0, 0, spareX - 1, spareY - 1);
 						
-						level.draw_image(x * w, y * h, backdrop_trim);
+						level.draw_image(bgW* w, bgH* h, backdrop_trim);
 						
 					}
 				}
 
 				if (spareY > 1) {
 					cimg backdrop_trim = cimg(backdrop);
-					for (int i = 0; i < x; i++) {
+					for (int i = 0; i < bgW; i++) {
 						backdrop_trim.crop(0, 0, w, spareY - 1);
-						level.draw_image(i * w, y * h, backdrop_trim);
+						level.draw_image(i * w, bgH* h, backdrop_trim);
 					}
 					if (spareX > 1) {
 						backdrop_trim.crop(0, 0, spareX - 1, spareY - 1);
-						level.draw_image(x * w, y * h, backdrop_trim);
+						level.draw_image(bgW* w, bgH* h, backdrop_trim);
 					}
 				}
 			}
