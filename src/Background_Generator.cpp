@@ -176,7 +176,7 @@ void Generate_Texture(const char* filename) {
 			cimg backdrop = cimg((_RELATIVE_PATH + std::string("assets/") + bdfname).c_str());
 
 			//resize texture and tile accordingly if backdrop is tiled
-			if (backgroundData["Backdrop"].contains("Tiled") && backgroundData["Backdrop"]["Tiled"]) y{
+			if (backgroundData["Backdrop"].contains("Tiled") && backgroundData["Backdrop"]["Tiled"]){
 				int w = backgroundData["Backdrop"]["Width"];
 				int h = backgroundData["Backdrop"]["Height"];
 
