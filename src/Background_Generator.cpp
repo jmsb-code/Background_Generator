@@ -22,6 +22,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
+
 	for (int i = 1; i < argc; i++) {
 		Generate_Texture(argv[i]);
 	}
@@ -249,12 +250,11 @@ void Generate_Texture(const char* filename) {
 			}
 		}
 	}
-	//level.save_png((_RELATIVE_PATH + std::string("textures/") + std::string(filename) + "_bdONLY" + std::string(".png")).c_str());
 
 	//Draw bottom static assets
 	for (json data : backgroundData["Assets"]) {
 
-		if (!data.contains("BelowTiles") || !data["BelowTiles"]) continue;
+		if ((!data.contains("BelowTiles") || !data["BelowTiles"]) || (data.contains("Animated") && data["Animated"])) continue;
 
 		std::string afname = data["Filename"];
 
@@ -277,7 +277,7 @@ void Generate_Texture(const char* filename) {
 	//Draw top static assets
 	for (json data : backgroundData["Assets"]) {
 
-		if (data.contains("BelowTiles") && data["BelowTiles"]) continue;
+		if (data.contains("BelowTiles") && data["BelowTiles"] || (data.contains("Animated") && data["Animated"])) continue;
 
 		std::string afname = data["Filename"];
 

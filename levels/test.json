@@ -1,8 +1,11 @@
 {
   "TileWidth": 30,
   "TileHeight": 17,
-  "Tileset": "tileset.png",
+  "TileSize":  32,
+  "Tileset": "dirtcrimsongrass_tileset.png",
   "TileSizeSS": 32,
+  "TilesetSS": 1,
+
   "Backdrop": {
     "Color": {
       "R": 255,
@@ -15,6 +18,7 @@
     "Width": 200,
     "Height": 125
   },
+
   "Tiles": [
     {
       "StartX": 0,
@@ -35,6 +39,7 @@
       "EndY": 8
     }
   ],
+  
   "Assets": [
     {
       "X": 48,
@@ -42,7 +47,8 @@
       "Width": 64,
       "Height": 96,
       "Filename": "asset.png",
-      "BelowTiles":  true
+      "BelowTiles":  true,
+      "Collidable": true
       
     }
   ]

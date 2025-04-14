@@ -1,0 +1,68 @@
+{
+  "TileWidth": 30,
+  "TileHeight": 17,
+  "TileSize":  32,
+  "Tileset": "dirtcrimsongrass_tileset.png",
+  "TileSizeSS": 32,
+  "TilesetSS": 1,
+
+  "Backdrop": {
+    "Color": {
+      "R": 255,
+      "G": 255,
+      "B": 255,
+      "A": 255
+    },
+    "Filename": "clouds.png",
+    "Tiled": true,
+    "Width": 200,
+    "Height": 125
+  },
+
+  "Tiles": [
+    {
+      "StartX": 0,
+      "EndX": 30,
+      "StartY": 15,
+      "EndY": 17
+    },
+    {
+      "StartX": 15,
+      "EndX": 21,
+      "StartY": 11,
+      "EndY": 12
+    },
+    {
+      "StartX": 17,
+      "EndX": 19,
+      "StartY": 7,
+      "EndY": 8
+    },
+    {
+      "StartX": 18,
+      "EndX": 19,
+      "StartY": 1,
+      "EndY": 15
+    },
+    {
+      "StartX": 17,
+      "EndX": 25,
+      "StartY": 2,
+      "EndY": 6
+    }
+  ],
+  
+  "Assets": [
+    {
+      "X": 48,
+      "Y": 388,
+      "Width": 64,
+      "Height": 96,
+      "Filename": "asset.png",
+      "BelowTiles":  true,
+      "Collidable": true
+      
+    }
+  ]
+
+}
