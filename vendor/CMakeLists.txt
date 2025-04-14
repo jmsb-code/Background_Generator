@@ -24,6 +24,7 @@ add_subdirectory(json-develop)
 # Optional: CImg
 set(VENDOR_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/lpng1647
+    ${CMAKE_CURRENT_BINARY_DIR}/lpng1647
     ${CMAKE_CURRENT_SOURCE_DIR}/CImg
     ${CMAKE_CURRENT_SOURCE_DIR}/json-develop
     CACHE INTERNAL "Vendor include directories"

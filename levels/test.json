@@ -4,7 +4,6 @@
   "TileSize":  32,
   "Tileset": "dirtcrimsongrass_tileset.png",
   "TileSizeSS": 32,
-  "TilesetSS": 1,
 
   "Backdrop": {
     "Color": {
@@ -39,7 +38,7 @@
       "EndY": 8
     }
   ],
-  
+
   "Assets": [
     {
       "X": 48,
@@ -47,9 +46,35 @@
       "Width": 64,
       "Height": 96,
       "Filename": "asset.png",
-      "BelowTiles":  true,
+      "BelowTiles": true,
       "Collidable": true
-      
+
+    },
+    {
+      "X": 800,
+      "Y": 280,
+      "Width": 200,
+      "Height": 200,
+      "Filename": "marioflag_waving.png",
+      "ssID": "1",
+      "FrameSize": 135,
+      "FrameCount": 0,
+      "Animated": true,
+      "Collidable": true
+
+    }
+  ],
+
+  "Entities": [
+    {
+      "Type": "Player",
+      "X": 100,
+      "Y": 100
+    },
+    {
+      "Type": "Zombie",
+      "X": 600,
+      "Y": 500
     }
   ]
 
